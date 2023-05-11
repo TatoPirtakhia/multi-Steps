@@ -60,7 +60,7 @@ function App() {
           <Route path="/4" element={<Submit />} />
         </Routes>
       </div>
-      <footer className="w-full h-[72px] bg-white flex items-center justify-between p-[16px]">
+      <footer className="w-full h-[72px] shadow-custom bg-white flex items-center justify-between p-[16px]">
         {location.pathname !== "/1" ? (
           <Link
             className="text-[14px] font-medium ubuntu text-goBeck"

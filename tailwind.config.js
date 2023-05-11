@@ -13,6 +13,7 @@ export default {
         goBeck:'rgba(150, 153, 170, 1)',
         confirm:"rgba(72, 62, 255, 1)",
         grey:'rgba(150, 153, 170, 1)',
+        lightGrey:'rgba(214, 217, 230, 1)',
         borderColor:'rgba(214, 217, 230, 1)'
       },
       fontSize: {

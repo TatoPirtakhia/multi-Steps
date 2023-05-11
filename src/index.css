@@ -24,4 +24,7 @@ body{
   .bg-desktop{
       background-image: url(./images/bg-sidebar-desktop.svg);
   }
+  .shadow-custom {
+    box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.0951141);
+  }
 }
