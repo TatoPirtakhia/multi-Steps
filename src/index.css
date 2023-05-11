@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgba(239, 245, 255, 1);
+  min-height: 100vh;
+}
+#root{
+  min-height: 100vh;
+}
+@layer utilities {
+  .ubuntu{
+      font-family: 'Ubuntu', sans-serif;
+  }
+  .bg_mobile{
+      background-image: url(./images/bg-sidebar-mobile.svg);
+  }
+  .bg-desktop{
+      background-image: url(./images/bg-sidebar-desktop.svg);
+  }
+}
