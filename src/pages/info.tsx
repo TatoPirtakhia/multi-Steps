@@ -1,15 +1,72 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { user } from "../userType";
 function Info() {
-    const handleKeyPress: React.KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
-        const key = event.key;
-        const allowedKeys = ["+", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Delete", "Backspace"];
-    
-        if (!allowedKeys.includes(key)) {
-          event.preventDefault();
-        }
-      };
-    
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const handleKeyPress: React.KeyboardEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = (event) => {
+    const key = event.key;
+    const allowedKeys = [
+      "+",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "Delete",
+      "Backspace",
+    ];
+
+    if (!allowedKeys.includes(key)) {
+      event.preventDefault();
+    }
+  };
+
+  let user: user = {
+    name: "",
+    email: "",
+    phone: "",
+    plan: {},
+    addOns: [],
+    planId: "",
+    planPrice: "",
+  };
+  const data = localStorage.getItem("user");
+  if (data) {
+    user = JSON.parse(data);
+  }
+  useEffect(()=>{
+    if(data){
+        setName(user.name)
+        setEmail(user.email)
+        setPhone(user.phone)
+    }
+  },[])
+
+  const inputName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+   
+    user.name = value;
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+  const inputEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    user.email = value;
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+  const inputPhone = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    user.phone = value;
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+
   return (
     <main className="bg-white shadow-custom w-[90%] mt-[-77px] rounded-[10px] flex flex-col pl-[24px] pt-[32px]">
       <h1 className="ubuntu text-xl font-bold  mb-[9px]   ">Personal info</h1>
@@ -24,6 +81,8 @@ function Info() {
           Name
         </label>
         <input
+         value={name}
+          onInput={inputName}
           type="text"
           id="name"
           placeholder="e.g. Tato Pirtakhia"
@@ -38,6 +97,8 @@ function Info() {
           Email Address
         </label>
         <input
+        value={email}
+          onInput={inputEmail}
           type="text"
           id="name"
           placeholder="e.g. tatopirtakhia@gmail.com"
@@ -52,6 +113,8 @@ function Info() {
           Phone Number
         </label>
         <input
+       value={phone}
+          onInput={inputPhone}
           onKeyDown={handleKeyPress}
           type="text"
           id="name"

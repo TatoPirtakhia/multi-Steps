@@ -84,7 +84,7 @@ function Plan() {
           </p>
         </div>
       </div>
-      <div className="mb-[32px] flex items-center justify-center gap-6 h-[48px] bg-[#F8F9FF] w-[93%] rounded-[8px] ">
+      <div className="mb-[32px] flex items-center justify-center gap-6 h-[48px] bg-[#F8F9FF] w-[93%] rounded-[8px] cursor-pointer ">
         <p>Monthly</p>
         <div
           className={`w-10 h-5 rounded-[10px] bg-Denim  pt-1  transition-all ${
