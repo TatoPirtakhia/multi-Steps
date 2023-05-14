@@ -9,11 +9,9 @@
 }
 body{
   background-color: rgba(239, 245, 255, 1);
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
-#root{
-  min-height: 100vh;
-}
+
 @layer utilities {
   .ubuntu{
       font-family: 'Ubuntu', sans-serif;
