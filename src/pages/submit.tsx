@@ -2,12 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { ArrayOfObject, user } from "../userType";
 import { useState } from "react";
 import Thank from "../images/thank";
+import PostData from "../request/Axios";
 
 function Submit(props: {
   yearly: boolean;
   value: number;
   array: ArrayOfObject[];
   user: user;
+  setUser: React.Dispatch<React.SetStateAction<user>>
 }) {
   const [hidden, setHidden] = useState<boolean>(true);
   const navigate = useNavigate();
@@ -20,8 +22,20 @@ function Submit(props: {
 
     return plan.price + Price;
   };
-  const submit = () => {
+  const submit = async () => {
+    props.setUser({
+      name: "",
+      email: "",
+      phone: "",
+      plan: {id: '', price: 0, name: ''},
+      addOns: [],
+    })
     setHidden(false);
+    setTimeout(()=>{
+      navigate('/1')
+      setHidden(true);
+    },3000)
+    await PostData(props.user)
   };
   return (
     <div className="flex items-center flex-col w-full">
@@ -69,7 +83,7 @@ function Submit(props: {
           </div>
           {props.user.addOns.map((item) => {
             return (
-              <div className="flex w-full items-center justify-between mb-3">
+              <div key={item.id} className="flex w-full items-center justify-between mb-3">
                 <p className="ubuntu font-normal  text-grey  text-sm">
                   {item.name}
                 </p>

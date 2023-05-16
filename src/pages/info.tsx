@@ -43,7 +43,6 @@ function Info(props:{
   const {
     register,
     handleSubmit,
-   
     setValue,
     formState: { errors },
   } = useForm<Inputs>({

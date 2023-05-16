@@ -14,11 +14,7 @@ function App() {
     name: "",
     email: "",
     phone: "",
-    plan: {
-      id: "",
-      name:'',
-      price: 0,
-    },
+    plan: {id: '', price: 0, name: ''},
     addOns: [],
   });
   useEffect(()=>{
@@ -108,7 +104,7 @@ function App() {
             path="/3"
             element={<AddOns  user={user} setUser={setUser}  setYearly={setYearly} yearly={yearly} array={array} setArray={setArray}/>}
           />
-          <Route path="/4" element={<Submit user={user}   yearly={yearly} array={array}  value={valuePlan} />} />
+          <Route path="/4" element={<Submit setUser={setUser}  user={user}   yearly={yearly} array={array}  value={valuePlan} />} />
         </Routes>
       </div>
     </div>

@@ -17,6 +17,8 @@ function Plan(props: {
   const navigate = useNavigate();
   const [validation, setValidation] = useState<string>("");
   const [clicked, setClicked] = useState<string>(user.plan.id);
+
+
   useEffect(() => {
     setClicked(user.plan.id);
   }, []);
