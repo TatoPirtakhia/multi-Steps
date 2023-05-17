@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useForm, SubmitHandler, useWatch } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 import { Inputs, user } from "../userType";
 import { useNavigate } from "react-router-dom";
@@ -71,15 +71,6 @@ function Info(props:{
     handleSubmit(onSubmit)();
   }
 
-
-  useEffect(() => {
-    // Perform actions based on errors.name value
-    if (errors && errors.name) {
-      console.log("Name has an error:", errors.name.message);
-    } else {
-      console.log("Name is valid");
-    }
-  }, [errors]);
 
   return (
     <div className="flex flex-col items-center  gap-[120px] xxl:w-[58%] xxl:gap-[50px]">
