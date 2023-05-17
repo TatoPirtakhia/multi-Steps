@@ -13,7 +13,7 @@ function Info(props:{
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
     email: Yup.string().required("Email is required").email("Invalid email"),
-    phone: Yup.string().required("Phone number is required"),
+    phone: Yup.string().required("Phone number is required").min(9),
   });
  
   const handleKeyPress: React.KeyboardEventHandler<
@@ -84,7 +84,7 @@ function Info(props:{
         <p className="ubuntu font-normal text-grey text-base w-[90%]  mb-6 xxl:w-full xxl:mb-[35px] ">
           Please provide your name, email address, and phone number.
         </p>
-        <div className="flex flex-col mb-[25px]">
+        <div className="flex flex-col mb-[25px] relative">
           <label
             htmlFor="name"
             className="text-Denim ubuntu font-normal text-[12px] xxl:text-sm xxl:mb-1 "
@@ -98,10 +98,10 @@ function Info(props:{
             placeholder="e.g. Tato Pirtakhia"
             className={`text-Denim font-medium text-base outline-none pl-[16px] w-[86%] h-10 xxl:h-12 xxl:rounded-[8px] rounded-[4px]  border-[1px] ${errors && errors.name ? 'border-red-600':' border-borderColor'} xxl:cursor-pointer xxl:hover:border-[#483EFF]`}
           />
-          {errors.name && <span>Please insert name </span>}
+          {errors.name && <span className="ubuntu text-red-700 font-normal absolute top-[57px] xxl:top-[73px]">Please insert name </span>}
         </div>
         
-        <div className="flex flex-col  mb-[25px]">
+        <div className="flex flex-col  mb-[25px] relative">
           <label
             htmlFor="email"
             className="text-Denim ubuntu font-normal text-[12px] xxl:text-sm xxl:mb-1"
@@ -115,10 +115,10 @@ function Info(props:{
             placeholder="e.g. tatopirtakhia@gmail.com"
             className={`text-Denim font-medium text-base outline-none pl-[16px] w-[86%] h-10 xxl:h-12 xxl:rounded-[8px] rounded-[4px]  border-[1px] ${errors && errors.email ? 'border-red-600':' border-borderColor'} xxl:cursor-pointer xxl:hover:border-[#483EFF]`}
           />
-         {errors.email && <span>Please insert email</span>}
+         {errors.email && <span className="ubuntu text-red-700 font-normal absolute top-[57px] xxl:top-[73px]">Please insert email</span>}
         </div>
        
-        <div className="flex flex-col  mb-[25px]">
+        <div className="flex flex-col  mb-[25px] relative">
           <label
             htmlFor="phone"
             className="text-Denim ubuntu font-normal text-[12px] xxl:text-sm xxl:mb-1"
@@ -134,7 +134,7 @@ function Info(props:{
             placeholder="e.g. +995 571 031 252"
             className={`text-Denim font-medium text-base outline-none pl-[16px] w-[86%] h-10 xxl:h-12 xxl:rounded-[8px] rounded-[4px]  border-[1px] ${errors && errors.phone ? 'border-red-600':' border-borderColor'} xxl:cursor-pointer xxl:hover:border-[#483EFF]`}
           />
-         {errors.phone && <span>Please insert phone</span>} 
+         {errors.phone && <span className="ubuntu text-red-700 font-normal absolute top-[57px] xxl:top-[73px]">Please insert phone</span>} 
         </div>
         
       </form>

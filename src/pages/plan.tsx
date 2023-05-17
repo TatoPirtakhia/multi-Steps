@@ -107,20 +107,22 @@ function Plan(props: {
 
   return (
     <div className="flex items-center flex-col gap-6">
-      <main className="bg-white shadow-custom w-[90%] mt-[-77px] rounded-[10px] flex flex-col pl-[24px] pt-[32px]">
-        <h1 className="ubuntu text-xl font-bold  mb-[9px]   ">
+      <main className="bg-white shadow-custom xxl:shadow-none w-[90%] xxl:w-full  mt-[-77px] xxl:mt-0 rounded-[10px] flex flex-col xxl:justify-between pl-[24px] pt-[32px] xxl:p-0 xxl:pt-10 xxl:h-[371px]">
+        <h1 className="ubuntu text-xl font-bold  mb-[9px] xxl:text-[32px]  ">
           Select your plan
         </h1>
         <p className="ubuntu font-normal text-grey text-base w-[90%] mb-6 ">
           You have the option of monthly or props.yearly billing.
         </p>
+        <div className="xxl:flex gap-[18px]">
         <div
           onClick={getId}
           id="1"
-          className={`mb-3 flex items-start gap-3 pl-4 pt-3 pb-4 w-[93%] rounded-[8px] border-[1px] ${
+          className={`mb-3 flex  gap-3 pl-4 pt-3 pb-4 w-[93%] rounded-[8px] border-[1px] xxl:gap-10 xxl:pt-5 xxl:pl-5 xxl:pb-0 xxl:flex-col xxl:w-[138px] xxl:mb-0  ${
             clicked === "1" ? " border-[#483EFF]" : " border-lightGrey"
           }  ${clicked === "" ? validation : ""} `}
         >
+          
           <Arcade />
           <div className="flex flex-col gap-[5px] mt-[-5px]">
             <p className="ubuntu text-Denim text-[16px] font-medium">Arcade</p>
@@ -143,7 +145,7 @@ function Plan(props: {
         <div
           onClick={getId}
           id="2"
-          className={`mb-3  flex items-start pt-3 pb-4  gap-3 pl-4 w-[93%]  rounded-[8px] border-[1px] ${
+          className={`mb-3  flex items-start pt-3 pb-4  gap-3 pl-4 w-[93%]  rounded-[8px] xxl:gap-10 xxl:p-5 border-[1px] xxl:flex-col xxl:w-[138px] xxl:mb-0 ${
             clicked === "2" ? " border-[#483EFF]" : " border-lightGrey"
           } ${clicked === "" ? validation : ""}`}
         >
@@ -173,12 +175,12 @@ function Plan(props: {
         <div
           onClick={getId}
           id="3"
-          className={`mb-6  flex items-start pt-3 pb-4  gap-3 pl-4 w-[93%] rounded-[8px] border-[1px] ${
+          className={`mb-6  flex items-start pt-3 pb-4  gap-3 pl-4 w-[93%] rounded-[8px] border-[1px] xxl:gap-10 xxl:p-5 xxl:flex-col xxl:w-[138px] xxl:mb-0 ${
             clicked === "3" ? " border-[#483EFF]" : " border-lightGrey"
           } ${clicked === "" ? validation : ""}`}
         >
           <Pro />
-          <div className="flex flex-col gap-[5px] mt-[-5px]">
+          <div className="flex flex-col gap-[5px] mt-[-5px] xxl:mt-0">
             <p className="ubuntu text-Denim text-[16px] font-medium">Pro</p>
             {props.yearly ? (
               <p className="ubuntu text-grey text-[14px] font-normal ">
@@ -198,8 +200,9 @@ function Plan(props: {
             )}
           </div>
         </div>
-        <div className="mb-[32px] flex items-center justify-center gap-6 h-[48px] bg-[#F8F9FF] w-[93%] rounded-[8px] cursor-pointer ">
-          <p>Monthly</p>
+        </div>
+        <div className="mb-[32px] flex items-center justify-center gap-6 h-[48px] bg-[#F8F9FF] w-[93%] rounded-[8px] cursor-pointer xxl:bg-[#F8F9FF] xxl:mt-8 xxl:mb-0">
+          <p className="ubuntu text-sm font-medium text-Denim">Monthly</p>
           <div
             className={`w-10 h-5 rounded-[10px] bg-Denim  pt-1  transition-all ${
               props.yearly ? "pl-6" : "pl-1"
@@ -209,10 +212,10 @@ function Plan(props: {
             <div className="w-3 h-3 rounded-[50%] bg-white"></div>
           </div>
 
-          <p>Yearly</p>
+          <p className="ubuntu text-sm font-medium text-grey">Yearly</p>
         </div>
       </main>
-      <footer className="w-full h-[72px] shadow-custom bg-white flex items-center justify-between p-[16px]">
+      <footer className="w-full h-[72px] shadow-custom xxl:shadow-none bg-white flex items-center justify-between p-[16px] xxl:mt-[90px]">
         <p
           onClick={() => {
             navigate("/1");
@@ -223,7 +226,7 @@ function Plan(props: {
         </p>
         <button
           onClick={validate}
-          className="ubuntu text-[16px] rounded-[4px] font-medium w-[97px] h-10 bg-Denim text-white flex items-center justify-center "
+          className="ubuntu text-[16px] rounded-[4px] font-medium w-[97px] h-10 bg-Denim text-white flex items-center justify-center xxl:w-[123px] xxl:h-12 xxl:rounded-[8px] xxl:cursor-pointer xxl:hover:bg-[#164A8A]  "
         >
           Next Step
         </button>
