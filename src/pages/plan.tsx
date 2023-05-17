@@ -118,7 +118,7 @@ function Plan(props: {
         <div
           onClick={getId}
           id="1"
-          className={`mb-3 flex  gap-3 pl-4 pt-3 pb-4 w-[93%] rounded-[8px] border-[1px] xxl:gap-10 xxl:pt-5 xxl:pl-5 xxl:pb-0 xxl:flex-col xxl:w-[138px] xxl:mb-0  ${
+          className={`mb-3 flex cursor-pointer  xxl:hover:border-purple gap-3 pl-4 pt-3 pb-4 w-[93%] rounded-[8px] border-[1px] xxl:gap-10 xxl:pt-5 xxl:pl-5 xxl:pb-0 xxl:flex-col xxl:w-[138px] xxl:mb-0  ${
             clicked === "1" ? " border-[#483EFF]" : " border-lightGrey"
           }  ${clicked === "" ? validation : ""} `}
         >
@@ -145,7 +145,7 @@ function Plan(props: {
         <div
           onClick={getId}
           id="2"
-          className={`mb-3  flex items-start pt-3 pb-4  gap-3 pl-4 w-[93%]  rounded-[8px] xxl:gap-10 xxl:p-5 border-[1px] xxl:flex-col xxl:w-[138px] xxl:mb-0 ${
+          className={`mb-3 cursor-pointer xxl:hover:border-purple flex items-start pt-3 pb-4  gap-3 pl-4 w-[93%]  rounded-[8px] xxl:gap-10 xxl:p-5 border-[1px] xxl:flex-col xxl:w-[138px] xxl:mb-0 ${
             clicked === "2" ? " border-[#483EFF]" : " border-lightGrey"
           } ${clicked === "" ? validation : ""}`}
         >
@@ -175,7 +175,7 @@ function Plan(props: {
         <div
           onClick={getId}
           id="3"
-          className={`mb-6  flex items-start pt-3 pb-4  gap-3 pl-4 w-[93%] rounded-[8px] border-[1px] xxl:gap-10 xxl:p-5 xxl:flex-col xxl:w-[138px] xxl:mb-0 ${
+          className={`mb-6 cursor-pointer xxl:hover:border-purple flex items-start pt-3 pb-4  gap-3 pl-4 w-[93%] rounded-[8px] border-[1px] xxl:gap-10 xxl:p-5 xxl:flex-col xxl:w-[138px] xxl:mb-0 ${
             clicked === "3" ? " border-[#483EFF]" : " border-lightGrey"
           } ${clicked === "" ? validation : ""}`}
         >
