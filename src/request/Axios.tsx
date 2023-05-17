@@ -2,7 +2,7 @@ import axios from "axios";
 
 const PostData = async  (data:any) =>{
     
-    await axios.post('http://localhost:3002/api/data',{
+    await axios.post('https://multisteps.onrender.com/api/data',{
         name:data.name,
         email:data.email,
         phone:data.phone,

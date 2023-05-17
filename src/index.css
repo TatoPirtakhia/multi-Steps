@@ -11,6 +11,17 @@ body{
   background-color: rgba(239, 245, 255, 1);
   /* min-height: 100vh; */
 }
+@media (min-width:1440px) {
+  body{
+    min-height: 100vh;
+  }
+  #root{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 @layer utilities {
   .ubuntu{

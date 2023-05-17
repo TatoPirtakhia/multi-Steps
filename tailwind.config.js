@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens:{
+        xxl:"1440px"
+      },
       borderRadius: {
         circle: "50%",
       },
@@ -16,6 +19,7 @@ export default {
         grey:'rgba(150, 153, 170, 1)',
         lightGrey:'rgba(214, 217, 230, 1)',
         borderColor:'rgba(214, 217, 230, 1)',
+        lightBlue:"rgba(171, 188, 255, 1)",
         purple:"#483EFF"
       },
       fontSize: {
