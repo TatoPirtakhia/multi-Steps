@@ -220,7 +220,7 @@ function Plan(props: {
           onClick={() => {
             navigate("/1");
           }}
-          className="ubuntu font-medium text-grey text-[14px]"
+          className="ubuntu font-medium text-grey text-[14px] xxl:text-base cursor-pointer xxl:hover:text-Denim"
         >
           Go Back
         </p>
