@@ -39,6 +39,30 @@ function App() {
     }
   }, [user]);
 
+  const nextPage = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetPath: string) => {
+
+    if (targetPath === '/2') {
+      if (user.name === "" && user.email === '' && user.phone === "") {
+        event.preventDefault();
+      }
+    }
+    
+    if (targetPath === '/3') {
+      if(user.addOns.length === 0){
+        event.preventDefault();
+      }
+      if (user.plan.id === "" && user.plan.price === 0 && user.plan.name === "") {
+        event.preventDefault();
+      }
+    }
+    
+    if (targetPath === '/4') {
+      if((user.plan.id === "" && user.plan.price === 0 && user.plan.name === "")|| user.addOns.length === 0 ){
+        event.preventDefault();
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col items-center xxl:items-start  xxl:flex-row xxl:w-[950px] xxl:gap-[100px] xxl:p-4 xxl:rounded-[15px] xxl:bg-white">
       <header
@@ -70,6 +94,7 @@ function App() {
         <div className="flex xxl:items-center gap-4">
           <Link
             to="/2"
+            onClick={(event) => nextPage(event, '/2')}
             className={`ubuntu font-bold flex items-center justify-center w-[33px] h-[33px] rounded-full
               ${
                 location.pathname === "/2"
@@ -91,6 +116,7 @@ function App() {
         <div className="flex xxl:items-center gap-4">
           <Link
             to="/3"
+            onClick={(event) => nextPage(event, '/3')}
             className={`ubuntu font-bold flex items-center justify-center w-[33px] h-[33px] rounded-full
               ${
                 location.pathname === "/3"
@@ -112,6 +138,7 @@ function App() {
         <div className="flex xxl:items-center gap-4">
           <Link
             to="/4"
+            onClick={(event) => nextPage(event, '/4')}
             className={`ubuntu font-bold flex items-center justify-center w-[33px] h-[33px] rounded-full
               ${
                 location.pathname === "/4"
